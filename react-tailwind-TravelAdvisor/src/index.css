@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #faf9f7;
+  color: hsl(215, 20%, 18%);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  /* Hide default cursor only on non-touch devices */
+  cursor: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+  #cursor-dot, #cursor-ring { display: none !important; }
+}
+
+/* ── Custom Cursor ─────────────────────────────────── */
+#cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: hsl(190, 65%, 42%);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: difference;
+}
+
+#cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid hsl(190, 65%, 42%);
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.35s cubic-bezier(0.16,1,0.3,1),
+              height 0.35s cubic-bezier(0.16,1,0.3,1),
+              border-color 0.2s,
+              opacity 0.2s;
+  opacity: 0.6;
+}
+
+body.cursor-hover #cursor-dot {
+  width: 14px; height: 14px;
+  background: hsl(175, 50%, 62%);
+}
+body.cursor-hover #cursor-ring {
+  width: 52px; height: 52px;
+  border-color: hsl(175, 50%, 62%);
+  opacity: 0.4;
+}
+
+body.cursor-click #cursor-dot {
+  width: 6px; height: 6px;
+  background: hsl(15, 80%, 60%);
+}
+body.cursor-click #cursor-ring {
+  width: 24px; height: 24px;
+  border-color: hsl(15, 80%, 60%);
+}
+
+/* ── Typography ───────────────────────────────────── */
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: hsl(205,75%,95%); }
+::-webkit-scrollbar-thumb { background: hsl(200,72%,38%); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(190,65%,42%); }
+
+/* ── Page Transition ──────────────────────────────── */
+.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.page-exit { opacity: 1; }
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* ── Custom Utilities ─────────────────────────────── */
+.overlay-animation {
+  position: relative;
+  padding: 4px 0;
+}
+.overlay-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: hsl(190, 65%, 42%);
+  transition: width 0.3s ease;
+}
+.overlay-animation:hover::after { width: 100%; }
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.glass-dark {
+  background: rgba(10,22,40,0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 32px rgba(10,22,40,0.08);
+}
+
+/* Icon hover */
+.icon {
+  font-size: 1.5rem;
+  cursor: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.icon:hover { color: hsl(190,65%,42%); transform: scale(1.15); }
+
+/* Star rating */
+.star-filled  { color: hsl(38,90%,55%); }
+.star-empty   { color: hsl(0,0%,80%); }
+
+/* Shimmer loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg,
+    hsl(205,75%,92%) 0%,
+    hsl(205,75%,96%) 50%,
+    hsl(205,75%,92%) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── React Datepicker override ─────────────────────── */
+.react-datepicker-wrapper { width: 100%; }
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(205,30%,82%);
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.react-datepicker__input-container input:focus { border-color: hsl(200,72%,38%); }
+
+/* ── Gradient Text ─────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(190,65%,52%) 0%, hsl(175,50%,62%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, hsl(42,90%,60%) 0%, hsl(38,90%,55%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover lift ───────────────────────────────── */
+.card-lift {
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px -15px rgba(10,22,40,0.18);
+}
+
+/* ── Section reveal helper ─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scroll snap carousel ──────────────────────────── */
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-center { scroll-snap-align: center; }
+.snap-start  { scroll-snap-align: start; }
+
+/* ── Mobile menu full overlay ──────────────────────── */
+.mobile-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(215, 80%, 14%);
+  border-bottom: 1px solid hsl(205, 75%, 92%);
+  transition: color 0.2s ease, padding-left 0.3s ease;
+  cursor: none;
+}
+.mobile-nav-link:hover {
+  color: hsl(190, 65%, 42%);
+  padding-left: 8px;
+}
+
+/* ── Floating particles ────────────────────────────── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* ── Glow button ───────────────────────────────────── */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.25) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-glow:hover::before { opacity: 1; }
+
+/* ── Responsive text helpers ───────────────────────── */
+.text-responsive-xl {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+.text-responsive-2xl {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+}
+.text-responsive-3xl {
+  font-size: clamp(2rem, 5.5vw, 4rem);
+}
+
+/* ── Section padding responsive ─────────────────────── */
+.section-pad {
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+/* ── Horizontal scroll hide scrollbar ───────────────── */
+.scroll-hide { scrollbar-width: none; }
+.scroll-hide::-webkit-scrollbar { display: none; }
+
+/* ── Back to top button ───────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: hsl(205, 75%, 28%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(10,22,40,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+  cursor: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: hsl(190, 65%, 42%);
+  box-shadow: 0 4px 24px rgba(100,210,200,0.4);
+}
