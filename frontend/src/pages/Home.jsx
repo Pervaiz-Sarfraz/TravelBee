@@ -42,7 +42,7 @@ export default function Home() {
       <Destinations />
       <Packages />
 
-      {/* Why VoyageWave */}
+      {/* Why TravelBee */}
       <section className="section-pad px-4 bg-ocean-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -56,7 +56,7 @@ export default function Home() {
               Travel Without Compromise
             </h2>
             <p className="text-ocean-400 mt-3 max-w-xl mx-auto text-sm sm:text-base">
-              Over 50,000 travelers trust VoyageWave for life-changing experiences. Here's why.
+              Over 50,000 travelers trust TravelBee for life-changing experiences. Here's why.
             </p>
           </motion.div>
 

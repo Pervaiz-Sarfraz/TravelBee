@@ -12,7 +12,7 @@ const reviews = [
     destination: 'Bora Bora',
     rating: 5,
     comment:
-      'Absolutely magical. The overwater bungalow was unreal — waking up to that turquoise lagoon every morning felt like a dream. VoyageWave handled every detail flawlessly from start to finish.',
+      'Absolutely magical. The overwater bungalow was unreal — waking up to that turquoise lagoon every morning felt like a dream. TravelBee handled every detail flawlessly from start to finish.',
     avatar: 'https://i.pravatar.cc/80?img=47',
   },
   {
@@ -22,7 +22,7 @@ const reviews = [
     destination: 'Kyoto, Japan',
     rating: 5,
     comment:
-      "Kyoto in cherry blossom season was breathtaking. The ryokan experience arranged by VoyageWave was unlike anything we'd experienced. Truly one of life's highlights.",
+      "Kyoto in cherry blossom season was breathtaking. The ryokan experience arranged by TravelBee was unlike anything we'd experienced. Truly one of life's highlights.",
     avatar: 'https://i.pravatar.cc/80?img=12',
   },
   {
@@ -32,7 +32,7 @@ const reviews = [
     destination: 'Maldives',
     rating: 5,
     comment:
-      "We celebrated our anniversary in the Maldives and it was perfect in every way. The private island, the bioluminescent beach at night... VoyageWave made the impossible possible.",
+      "We celebrated our anniversary in the Maldives and it was perfect in every way. The private island, the bioluminescent beach at night... TravelBee made the impossible possible.",
     avatar: 'https://i.pravatar.cc/80?img=32',
   },
   {
@@ -42,7 +42,7 @@ const reviews = [
     destination: 'Patagonia',
     rating: 5,
     comment:
-      "I'd been dreaming of Patagonia for years and VoyageWave delivered beyond expectations. The guided trek through Torres del Paine was the most spectacular thing I have ever witnessed.",
+      "I'd been dreaming of Patagonia for years and TravelBee delivered beyond expectations. The guided trek through Torres del Paine was the most spectacular thing I have ever witnessed.",
     avatar: 'https://i.pravatar.cc/80?img=68',
   },
 ];

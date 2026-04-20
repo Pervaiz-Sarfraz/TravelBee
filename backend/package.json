@@ -1,7 +1,7 @@
 {
-  "name": "voyagewave-backend",
+  "name": "travelbee-backend",
   "version": "1.0.0",
-  "description": "VoyageWave Travel Agency API",
+  "description": "TravelBee Travel Agency API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

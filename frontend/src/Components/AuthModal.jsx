@@ -59,7 +59,7 @@ export default function AuthModal({ isOpen, onClose }) {
                 <HiOutlineX size={20} />
               </button>
               <h2 className="font-display text-2xl font-bold text-ocean-800 mb-2">
-                {isLogin ? 'Welcome Back' : 'Join VoyageWave'}
+                {isLogin ? 'Welcome Back' : 'Join TravelBee'}
               </h2>
               <p className="text-ocean-400 text-sm">
                 {isLogin ? 'Enter your details to continue your journey' : 'Start your luxury travel experience today'}

@@ -12,7 +12,7 @@ const team = [
 ];
 
 const milestones = [
-  { year: '2004', event: 'VoyageWave founded in Barcelona, Spain' },
+  { year: '2004', event: 'TravelBee founded in Barcelona, Spain' },
   { year: '2008', event: 'Expanded to 50+ global destinations' },
   { year: '2014', event: 'Launched all-inclusive luxury packages' },
   { year: '2018', event: 'Hit 10,000 happy traveler milestone' },
@@ -46,7 +46,7 @@ export default function AboutPage() {
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }}
             className="text-white/85 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mt-4">
-            Founded in 2004, VoyageWave has spent two decades crafting journeys that transform ordinary holidays into extraordinary memories.
+            Founded in 2004, TravelBee has spent two decades crafting journeys that transform ordinary holidays into extraordinary memories.
           </motion.p>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function AboutPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="font-display text-white text-4xl font-bold mb-4">Ready to Travel With Us?</h2>
           <p className="text-white/85 text-base max-w-md mx-auto mb-8">
-            Join 50,000+ travelers who've trusted VoyageWave with their most important moments.
+            Join 50,000+ travelers who've trusted TravelBee with their most important moments.
           </p>
           <Link to="/destinations"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-ocean-800 font-bold rounded-full hover:bg-seafoam hover:text-white transition-all duration-300 group shadow-xl">

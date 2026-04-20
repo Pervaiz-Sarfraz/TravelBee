@@ -66,7 +66,7 @@ export default function Navbar({ onAuthOpen }) {
             <span className={`font-display font-bold text-xl tracking-tight transition-colors hidden xs:block sm:block ${
               dark ? 'text-ocean-800' : 'text-white'
             }`}>
-              Voyage<span className={dark ? 'text-wave' : 'text-seafoam'}>Wave</span>
+              Travel<span className={dark ? 'text-wave' : 'text-seafoam'}>Bee</span>
             </span>
           </Link>
 
@@ -173,7 +173,7 @@ export default function Navbar({ onAuthOpen }) {
                   <MdOutlineExplore className="text-white text-lg" />
                 </div>
                 <span className="font-display font-bold text-xl text-ocean-800">
-                  Voyage<span className="text-wave">Wave</span>
+                  Travel<span className="text-wave">Bee</span>
                 </span>
               </Link>
               <button
@@ -248,7 +248,7 @@ export default function Navbar({ onAuthOpen }) {
 
             {/* Footer */}
             <div className="px-6 py-5 border-t border-ocean-50">
-              <p className="text-ocean-300 text-xs text-center">© 2025 VoyageWave · Crafted with ♡</p>
+              <p className="text-ocean-300 text-xs text-center">© 2025 TravelBee · Crafted with ♡</p>
             </div>
           </motion.div>
         )}

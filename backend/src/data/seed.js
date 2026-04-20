@@ -144,7 +144,7 @@ const PACKAGES = [
 
 async function seed() {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/voyagewave');
+    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/travelbee');
     console.log('✅ Connected to MongoDB');
 
     const Destination = require('../models/Destination');

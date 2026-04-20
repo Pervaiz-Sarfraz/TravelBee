@@ -1,8 +1,8 @@
-# 🌊 VoyageWave — Premium Travel Agency Portal
+# 🐝 TravelBee — Premium Travel Agency Portal
 
-VoyageWave is a high-craft, modern MERN stack travel portal designed for luxury experiences. It features a fluid, responsive design system built with Vite, React, and Tailwind CSS, powered by a robust Node.js/Express/MongoDB backend.
+TravelBee is a high-craft, modern MERN stack travel portal designed for luxury experiences. It features a fluid, responsive design system built with Vite, React, and Tailwind CSS, powered by a robust Node.js/Express/MongoDB backend.
 
-![VoyageWave Banner](./react-tailwind-TravelAdvisor/public/banner.png)
+![TravelBee Banner](./frontend/public/banner.png)
 
 ## ✨ Premium Features
 
@@ -40,7 +40,7 @@ Clone the repository and install dependencies:
 
 ```bash
 # Frontend
-cd react-tailwind-TravelAdvisor
+cd frontend
 npm install
 
 # Backend
@@ -61,7 +61,7 @@ Start both servers simultaneously:
 
 ```bash
 # Terminal 1: Frontend
-cd react-tailwind-TravelAdvisor
+cd frontend
 npm run dev
 
 # Terminal 2: Backend
@@ -77,4 +77,4 @@ Our redesign focused on **fluidity** and **mobile-first responsiveness**. Every 
 > Use the custom cursor to hover over destination cards to experience the smooth magnetic scaling and shimmer loading states.
 
 ---
-Crafted with ♡ for VoyageWave travelers worldwide.
+Crafted with ♡ for TravelBee travelers worldwide.

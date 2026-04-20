@@ -98,7 +98,7 @@ export default function Footer() {
   const handleNewsletter = (e) => {
     e.preventDefault();
     if (!email) return;
-    toast.success('🌊 Subscribed! Welcome to the VoyageWave community.');
+    toast.success('🐝 Subscribed! Welcome to the TravelBee community.');
     setEmail('');
   };
 
@@ -156,7 +156,7 @@ export default function Footer() {
                   <MdOutlineExplore className="text-white text-lg" />
                 </div>
                 <span className="font-display font-bold text-xl">
-                  Voyage<span className="text-wave">Wave</span>
+                  Travel<span className="text-wave">Bee</span>
                 </span>
               </Link>
               <p className="text-white/70 text-sm leading-relaxed max-w-xs">
@@ -190,7 +190,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="border-t border-white/8 mt-10 sm:mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-white/60 text-sm">
-              © {new Date().getFullYear()} VoyageWave. All rights reserved.
+              © {new Date().getFullYear()} TravelBee. All rights reserved.
             </p>
             <p className="text-white/60 text-xs">
               Made with ♡ for passionate travelers worldwide.
